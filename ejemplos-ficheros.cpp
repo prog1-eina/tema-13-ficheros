@@ -1,16 +1,15 @@
-﻿/********************************************************************************\
+﻿/******************************************************************************\
  * Curso de Programación 1. Tema 13 (Ficheros)
  * Autores: Javier Martínez y Miguel Ángel Latre
  * Última revisión: 22 de noviembre de 2019
  * Resumen: Algunas funciones que trabajan con ficheros leyendo o escribiendo
  *          datos carácter a carácter.
- * Codificación de caracteres original de este fichero: UTF-8 con BOM
-\********************************************************************************/
+\******************************************************************************/
 
 #include <iostream>
 #include <fstream>
+#include <string>
 using namespace std;
-
 
 /*
  * Pre:  ---
@@ -47,10 +46,10 @@ void crearFichero() {
 /*
  * Pre:  ---
  * Post: Si «nombreFichero» define el nombre de un fichero, entonces muestra su
- *       contenido por pantalla; en caso contrario advierte del error escribiendo
- *       un mensaje en la pantalla.
+ *       contenido por pantalla; en caso contrario advierte del error
+ *       escribiendo un mensaje en la pantalla.
  */
-void mostrar(const char nombreFichero[]) {
+void mostrar(const string nombreFichero) {
     ifstream f;                    // Declara un flujo de entrada
     f.open(nombreFichero);         // Le asocia el fichero «nombreFichero»
     if (f.is_open()) {
@@ -70,11 +69,11 @@ void mostrar(const char nombreFichero[]) {
 /*
  * Pre:  ---
  * Post: Si «nombreFichero» define el nombre de un fichero, entonces muestra su
- *       contenido por pantalla; en caso contrario advierte del error escribiendo
- *       un mensaje en la pantalla.
+ *       contenido por pantalla; en caso contrario advierte del error
+ *       escribiendo un mensaje en la pantalla.
  * Nota: Versión de la función anterior, que utiliza istream::get(char&).
  */
-void mostrar2(const char nombreFichero[]) {
+void mostrar2(const string nombreFichero) {
     ifstream f;                    // Declara un flujo de entrada
     f.open(nombreFichero);         // Le asocia el fichero «nombreFichero»
     if (f.is_open()) {
@@ -93,11 +92,11 @@ void mostrar2(const char nombreFichero[]) {
 
 /*
  * Pre:  ---
- * Post: Si «nombreFichero» define el nombre de un fichero, copia su contenido en
- *       «nombreCopia»; en caso contrario o en caso de otro error, advierte del
- *       mismo escribiendo un mensaje en la pantalla.
+ * Post: Si «nombreFichero» define el nombre de un fichero, copia su contenido
+ *       en «nombreCopia»; en caso contrario o en caso de otro error, advierte
+ *       del mismo escribiendo un mensaje en la pantalla.
  */
-void copiar(const char nombreFichero[], const char nombreCopia[]) {
+void copiar(const string nombreFichero, const string nombreCopia) {
     ifstream fOriginal;               // Declara un flujo de entrada
     fOriginal.open (nombreFichero);   // Le asocia el fichero «nombreFichero»
     if (fOriginal.is_open()) {
@@ -130,6 +129,7 @@ void copiar(const char nombreFichero[], const char nombreCopia[]) {
 int main() {
     crearFichero();
     mostrar("miPrimerFichero.txt");
+    cout << endl;
     mostrar2("miPrimerFichero.txt");
     return 0;
 }
