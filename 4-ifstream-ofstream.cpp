@@ -73,7 +73,7 @@ void mostrar(const string nombreFichero) {
  *       escribiendo un mensaje en la pantalla.
  * Nota: Versión de la función anterior, que utiliza istream::get(char&).
  */
-void mostrar2(const string nombreFichero) {
+void mostrar_versionMetodoGet(const string nombreFichero) {
     ifstream f;                    // Declara un flujo de entrada
     f.open(nombreFichero);         // Le asocia el fichero «nombreFichero»
     if (f.is_open()) {
@@ -130,6 +130,6 @@ int main() {
     crearFichero();
     mostrar("miPrimerFichero.txt");
     cout << endl;
-    mostrar2("miPrimerFichero.txt");
+    mostrar_versionMetodoGet("miPrimerFichero.txt");
     return 0;
 }
