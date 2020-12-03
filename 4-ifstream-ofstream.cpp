@@ -1,7 +1,7 @@
 ﻿/******************************************************************************\
  * Curso de Programación 1. Tema 13 (Ficheros)
  * Autores: Javier Martínez y Miguel Ángel Latre
- * Última revisión: 22 de noviembre de 2019
+ * Última revisión: 3 de diciembre de 2019
  * Resumen: Algunas funciones que trabajan con ficheros leyendo o escribiendo
  *          datos carácter a carácter.
 \******************************************************************************/
@@ -13,7 +13,7 @@ using namespace std;
 
 /*
  * Pre:  ---
- * Post: Ha creado un fichero denominado "miPrimerFichero.txt" y ha escrito en
+ * Post: Ha creado un fichero denominado "mi-primer-fichero.txt" y ha escrito en
  *       él las letras mayúsculas del alfabeto inglés. En caso de que se haya
  *       producido un error, ha informado de ello escribiendo en «cerr».
  */
@@ -22,8 +22,8 @@ void crearFichero() {
     ofstream f;
 
     // Asociación del flujo «f» a un fichero externo denominado
-    // "miPrimerFichero.txt"
-    f.open("miPrimerFichero.txt");
+    // "mi-primer-fichero.txt"
+    f.open("mi-primer-fichero.txt");
 
     // Comprobación de que el flujo «f» se ha asociado correctamente
     if (f.is_open()) {
@@ -38,7 +38,7 @@ void crearFichero() {
     }
     else {
         // El flujo «f» no se ha asociado correctamente con el fichero externo
-        cerr << "No se ha podido crear el fichero \"miPrimerFichero.txt\""
+        cerr << "No se ha podido crear el fichero \"mi-primer-fichero.txt\""
              << endl;
     }
 }
@@ -53,11 +53,17 @@ void mostrar(const string nombreFichero) {
     ifstream f;                    // Declara un flujo de entrada
     f.open(nombreFichero);         // Le asocia el fichero «nombreFichero»
     if (f.is_open()) {
-        char c = f.get();          // Intenta leer un primer carácter
+        // Intenta leer el primer carácter del flujo:
+        char c = f.get();          
+
         while (!f.eof()) {
-        // Mientras el último intento de lectura ha sido correcto
-            cout << c;             // Presenta el último carácter leído
-            c = f.get();           // Intenta leer un nuevo carácter
+        // Mientras f.eof() devuelve «false», indica que la última 
+        // operación de lectura fue correcta: hay, por lo tanto, un nuevo 
+        // carácter que escribir.
+            // Escribe en la pantalla el último carácter leído
+            cout << c;             
+            // Intenta leer un nuevo carácter para la siguiente iteración
+            c = f.get();           
         }
         f.close();                 // Disocia el flujo y el fichero externo
     }
@@ -73,7 +79,7 @@ void mostrar(const string nombreFichero) {
  *       escribiendo un mensaje en la pantalla.
  * Nota: Versión de la función anterior, que utiliza istream::get(char&).
  */
-void mostrar_versionMetodoGet(const string nombreFichero) {
+void mostrar_versionGetReferencia(const string nombreFichero) {
     ifstream f;                    // Declara un flujo de entrada
     f.open(nombreFichero);         // Le asocia el fichero «nombreFichero»
     if (f.is_open()) {
@@ -123,13 +129,13 @@ void copiar(const string nombreFichero, const string nombreCopia) {
 }
 
 /*
- * Programa que hace una pequeña prueba de las funciones «crearFichero», «mostrar»
- * y «mostrar2».
+ * Programa que hace una pequeña prueba de las funciones «crearFichero»,
+ *  «mostrar» y «mostrar_versionGetReferencia».
  */
 int main() {
     crearFichero();
-    mostrar("miPrimerFichero.txt");
+    mostrar("mi-primer-fichero.txt");
     cout << endl;
-    mostrar_versionMetodoGet("miPrimerFichero.txt");
+    mostrar_versionGetReferencia("mi-primer-fichero.txt");
     return 0;
 }
