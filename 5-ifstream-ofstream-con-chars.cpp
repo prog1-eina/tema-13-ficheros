@@ -3,7 +3,16 @@
  * Autores: Javier Martínez y Miguel Ángel Latre
  * Última revisión: 3 de diciembre de 2019
  * Resumen: Algunas funciones que trabajan con ficheros leyendo o escribiendo
- *          datos carácter a carácter.
+ *          datos carácter a carácter con los métodos «get» y «put».
+ * Nota: El programa completo está contenido en este fichero, por lo que puede 
+ *       compilarse y ejecutarse con la extensión Code Runner de Visual Studio 
+ *       Code.
+ *       También puede compilarse desde la terminal través de la orden
+ *           g++ -Wall -Wextra 5-ifstream-ofstream-con-chars.cpp -o 5-ifstream-ofstream-con-chars
+ *       y ejecutarse en Windows a través de la orden
+ *           .\5-ifstream-ofstream-con-chars.exe
+ *       o en Linux y macOS
+ *           ./5-ifstream-ofstream-con-chars
 \******************************************************************************/
 
 #include <iostream>
@@ -51,7 +60,7 @@ void crearFichero() {
  */
 void mostrar(const string nombreFichero) {
     ifstream f;                    // Declara un flujo de entrada
-    f.open(nombreFichero);         // Le asocia el fichero «nombreFichero»
+    f.open(nombreFichero);         // Lo asocia con el fichero «nombreFichero»
     if (f.is_open()) {
         // Intenta leer el primer carácter del flujo:
         char c = f.get();          
@@ -59,13 +68,13 @@ void mostrar(const string nombreFichero) {
         while (!f.eof()) {
         // Mientras f.eof() devuelve «false», indica que la última 
         // operación de lectura fue correcta: hay, por lo tanto, un nuevo 
-        // carácter que escribir.
+        // carácter que procesar.
             // Escribe en la pantalla el último carácter leído
             cout << c;             
             // Intenta leer un nuevo carácter para la siguiente iteración
             c = f.get();           
         }
-        f.close();                 // Disocia el flujo y el fichero externo
+        f.close();                 // Disocia el flujo del fichero externo
     }
     else {
         cerr << "No se ha podido acceder a \"" << nombreFichero << "\"" << endl;
@@ -103,25 +112,25 @@ void mostrar_versionGetReferencia(const string nombreFichero) {
  *       del mismo escribiendo un mensaje en la pantalla.
  */
 void copiar(const string nombreFichero, const string nombreCopia) {
-    ifstream fOriginal;               // Declara un flujo de entrada
-    fOriginal.open (nombreFichero);   // Le asocia el fichero «nombreFichero»
-    if (fOriginal.is_open()) {
-        ofstream fCopia;              // Declara un flujo de salida
-        fCopia.open(nombreCopia);     // Le asocia el fichero «nombreCopia»
-        if (fCopia.is_open()) {
-            char c = fOriginal.get();     // Intenta leer un primer carácter
-            while (!fOriginal.eof()) {
+    ifstream original;              // Declara un flujo de entrada
+    original.open(nombreFichero);  // Lo asocia con el fichero «nombreFichero»
+    if (original.is_open()) {
+        ofstream copia;             // Declara un flujo de salida
+        copia.open(nombreCopia);    // Lo asocia con el fichero «nombreCopia»
+        if (copia.is_open()) {
+            char c = original.get();     // Intenta leer un primer carácter
+            while (!original.eof()) {
             // Mientras el último intento de lectura ha sido correcto
-                fCopia.put(c);            // Escribe el último carácter leído
-                c = fOriginal.get();      // Intenta leer un nuevo carácter
+                copia.put(c);            // Escribe el último carácter leído
+                c = original.get();      // Intenta leer un nuevo carácter
             }
-            fCopia.close();  // Disocia y libera ficheros
+            copia.close();             // Disocia el flujo y el fichero externo
         }
         else {
             cerr << "No se ha podido escribir en \"" << nombreCopia << "\"."
                  << endl;
         }
-        fOriginal.close();// Disocia y libera ficheros
+        original.close();              // Disocia el flujo y el fichero externo
     }
     else {
         cerr << "No se ha podido acceder a \"" << nombreFichero << "\"." << endl;
