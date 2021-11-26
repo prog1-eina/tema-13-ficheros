@@ -57,7 +57,6 @@ void crearFichero() {
  * Post: Si «nombreFichero» define el nombre de un fichero, entonces muestra su
  *       contenido por pantalla; en caso contrario advierte del error
  *       escribiendo un mensaje en la pantalla.
- * Nota: Versión de la función anterior, que utiliza istream::get(char&).
  */
 void mostrar(const string nombreFichero) {
     ifstream f;                    // Declara un flujo de entrada
