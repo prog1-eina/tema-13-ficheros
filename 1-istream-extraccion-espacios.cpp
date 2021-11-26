@@ -21,7 +21,8 @@ using namespace std;
  * Programa de ejemplo de utilización de los operadores de extracción.
  */
 int main() {
-    cout << "Escriba un entero, un real, un carácter y una palabra (separados por blancos): ";
+    cout << "Escriba un entero, un real, un carácter y una palabra (separados "
+         << "por blancos): ";
     int entero;
     double real;
     char caracter;

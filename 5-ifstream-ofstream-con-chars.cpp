@@ -57,47 +57,17 @@ void crearFichero() {
  * Post: Si «nombreFichero» define el nombre de un fichero, entonces muestra su
  *       contenido por pantalla; en caso contrario advierte del error
  *       escribiendo un mensaje en la pantalla.
+ * Nota: Versión de la función anterior, que utiliza istream::get(char&).
  */
 void mostrar(const string nombreFichero) {
     ifstream f;                    // Declara un flujo de entrada
-    f.open(nombreFichero);         // Lo asocia con el fichero «nombreFichero»
-    if (f.is_open()) {
-        // Intenta leer el primer carácter del flujo:
-        char c = f.get();          
-
-        while (!f.eof()) {
-        // Mientras f.eof() devuelve «false», indica que la última 
-        // operación de lectura fue correcta: hay, por lo tanto, un nuevo 
-        // carácter que procesar.
-            // Escribe en la pantalla el último carácter leído
-            cout << c;             
-            // Intenta leer un nuevo carácter para la siguiente iteración
-            c = f.get();           
-        }
-        f.close();                 // Disocia el flujo del fichero externo
-    }
-    else {
-        cerr << "No se ha podido acceder a \"" << nombreFichero << "\"" << endl;
-    }
-}
-
-/*
- * Pre:  ---
- * Post: Si «nombreFichero» define el nombre de un fichero, entonces muestra su
- *       contenido por pantalla; en caso contrario advierte del error
- *       escribiendo un mensaje en la pantalla.
- * Nota: Versión de la función anterior, que utiliza istream::get(char&).
- */
-void mostrar_versionGetReferencia(const string nombreFichero) {
-    ifstream f;                    // Declara un flujo de entrada
     f.open(nombreFichero);         // Le asocia el fichero «nombreFichero»
     if (f.is_open()) {
-        char c;
-        f.get(c);                  // Intenta leer un primer carácter
-        while (!f.eof()) {
-        // Mientras el último intento de lectura ha sido correcto
-            cout << c;             // Presenta el último carácter leído
-            f.get(c);              // Intenta leer un nuevo carácter
+        char c;        
+        while (f.get(c)) {
+        // Mientras se leen los datos del flujo y la última lectura es correcta
+            // Se procesa el último dato leído: se escribe en la pantalla 
+            cout << c;
         }
         f.close();                 // Disocia el flujo y el fichero externo
     } else {
@@ -118,11 +88,11 @@ void copiar(const string nombreFichero, const string nombreCopia) {
         ofstream copia;             // Declara un flujo de salida
         copia.open(nombreCopia);    // Lo asocia con el fichero «nombreCopia»
         if (copia.is_open()) {
-            char c = original.get();     // Intenta leer un primer carácter
-            while (!original.eof()) {
-            // Mientras el último intento de lectura ha sido correcto
-                copia.put(c);            // Escribe el último carácter leído
-                c = original.get();      // Intenta leer un nuevo carácter
+            char c;
+            while (original.get(c)) {
+            // Mientras se leen los datos del flujo y la última lectura es correcta
+                // Se procesa el último dato leído: se escribe en «copia» 
+                copia.put(c);
             }
             copia.close();             // Disocia el flujo y el fichero externo
         }
@@ -144,7 +114,6 @@ void copiar(const string nombreFichero, const string nombreCopia) {
 int main() {
     crearFichero();
     mostrar("mi-primer-fichero.txt");
-    cout << endl;
-    mostrar_versionGetReferencia("mi-primer-fichero.txt");
+    copiar("mi-primer-fichero.txt", "mi-segundo-fichero.txt");
     return 0;
 }

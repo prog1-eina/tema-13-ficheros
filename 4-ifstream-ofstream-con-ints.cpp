@@ -64,18 +64,12 @@ void mostrar(const string nombreFichero) {
     ifstream f;                    // Declara un flujo de entrada
     f.open(nombreFichero);         // Le asocia el fichero «nombreFichero»
     if (f.is_open()) {
-        // Intenta leer el primer entero del flujo:
         int n;
-        f >> n;
-
-        while (!f.eof()) {
-        // Mientras f.eof() devuelve «false», indica que la última 
-        // operación de lectura fue correcta: hay, por lo tanto, un nuevo 
-        // entero que escribir
+        while (f >> n) {
+        // Mientras se leen los datos del flujo y la última lectura es correcta
+            // Se procesa el último dato leído: 
             // Escribe en la pantalla el último enetero leído
             cout << n << " ";
-            // Intenta leer un nuevo entero para la siguiente iteración
-            f >> n;
         }
         f.close();                 // Disocia el flujo y el fichero externo
     }
@@ -99,12 +93,12 @@ void copiar(const string nombreFichero, const string nombreCopia) {
         ofstream copia;              // Declara un flujo de salida
         copia.open(nombreCopia);     // Le asocia el fichero «nombreCopia»
         if (copia.is_open()) {
-            int n;
-            original >> n;               // Intenta leer un primer entero
-            while (!original.eof()) {
-            // Mientras el último intento de lectura ha sido correcto
-                copia << n << endl;      // Escribe el último entero leído
-                original >> n;           // Intenta leer un nuevo entero
+            int n;            
+            while (original >> n) {
+            // Mientras se leen los datos del flujo y la última lectura es correcta
+                // Se procesa el último dato leído: 
+                // Escribe en copia el último entero leído
+                copia << n << endl;      
             }
             copia.close();  // Disocia y libera ficheros
         }
