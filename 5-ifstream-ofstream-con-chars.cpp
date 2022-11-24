@@ -22,9 +22,9 @@ using namespace std;
 
 /*
  * Pre:  ---
- * Post: Ha creado un fichero denominado "mi-primer-fichero.txt" y ha escrito en
- *       él las letras mayúsculas del alfabeto inglés. En caso de que se haya
- *       producido un error, ha informado de ello escribiendo en «cerr».
+ * Post: Crea un fichero denominado "mi-primer-fichero.txt" y escribe en
+ *       él las letras mayúsculas del alfabeto inglés. En caso de que se 
+ *       produzca un error, informa de ello escribiendo en «cerr».
  */
 void crearFichero() {
     // Declaración de un flujo de datos de salida

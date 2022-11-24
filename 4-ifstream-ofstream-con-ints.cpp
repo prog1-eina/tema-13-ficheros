@@ -22,9 +22,9 @@ using namespace std;
 
 /*
  * Pre:  ---
- * Post: Ha creado un fichero denominado "mi-primer-fichero.txt" y ha escrito en
+ * Post: Crea un fichero denominado "mi-primer-fichero.txt" y escribe en
  *       él los números del 1 al 100, a razón de uno por línea. En caso de que
- *       se haya producido un error, ha informado de ello escribiendo en «cerr».
+ *       se produzca un error, informa de ello escribiendo en «cerr».
  */
 void crearFichero() {
     // Declaración de un flujo de datos de salida
@@ -68,7 +68,7 @@ void mostrar(const string nombreFichero) {
         while (f >> n) {
         // Mientras se leen los datos del flujo y la última lectura es correcta
             // Se procesa el último dato leído: 
-            // Escribe en la pantalla el último enetero leído
+            // Escribe en la pantalla el último entero leído
             cout << n << " ";
         }
         f.close();                 // Disocia el flujo y el fichero externo
