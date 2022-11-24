@@ -4,15 +4,15 @@
  * Última revisión: 3 de diciembre de 2019
  * Resumen: Algunas funciones que trabajan con ficheros leyendo o escribiendo
  *          datos de tipo entero a través del operador de extracción >>.
- * Nota: El programa completo está contenido en este fichero, por lo que puede 
- *       compilarse y ejecutarse con la extensión Code Runner de Visual Studio 
- *       Code.
- *       También puede compilarse desde la terminal través de la orden
- *           g++ -Wall -Wextra 4-ifstream-ofstream-con-ints.cpp -o 4-ifstream-ofstream-con-ints
- *       y ejecutarse en Windows a través de la orden
- *           .\4-ifstream-ofstream-con-ints.exe
- *       o en Linux y macOS
- *           ./4-ifstream-ofstream-con-ints
+ * Nota: El programa completo está contenido en este fichero, por lo que puede 
+ *       compilarse y ejecutarse con la extensión Code Runner de Visual Studio 
+ *       Code.
+ *       También puede compilarse desde la terminal través de la orden
+ *           g++ -Wall -Wextra 4-ifstream-ofstream-con-ints.cpp -o 4-ifstream-ofstream-con-ints
+ *       y ejecutarse en Windows a través de la orden
+ *           .\4-ifstream-ofstream-con-ints.exe
+ *       o en Linux y macOS
+ *           ./4-ifstream-ofstream-con-ints
 \******************************************************************************/
 
 #include <iostream>

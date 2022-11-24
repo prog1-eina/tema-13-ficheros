@@ -4,15 +4,15 @@
  * Última revisión: 3 de diciembre de 2019
  * Resumen: Algunas funciones que trabajan con ficheros leyendo o escribiendo
  *          datos carácter a carácter con los métodos «get» y «put».
- * Nota: El programa completo está contenido en este fichero, por lo que puede 
- *       compilarse y ejecutarse con la extensión Code Runner de Visual Studio 
- *       Code.
- *       También puede compilarse desde la terminal través de la orden
- *           g++ -Wall -Wextra 5-ifstream-ofstream-con-chars.cpp -o 5-ifstream-ofstream-con-chars
- *       y ejecutarse en Windows a través de la orden
- *           .\5-ifstream-ofstream-con-chars.exe
- *       o en Linux y macOS
- *           ./5-ifstream-ofstream-con-chars
+ * Nota: El programa completo está contenido en este fichero, por lo que puede 
+ *       compilarse y ejecutarse con la extensión Code Runner de Visual Studio 
+ *       Code.
+ *       También puede compilarse desde la terminal través de la orden
+ *           g++ -Wall -Wextra 5-ifstream-ofstream-con-chars.cpp -o 5-ifstream-ofstream-con-chars
+ *       y ejecutarse en Windows a través de la orden
+ *           .\5-ifstream-ofstream-con-chars.exe
+ *       o en Linux y macOS
+ *           ./5-ifstream-ofstream-con-chars
 \******************************************************************************/
 
 #include <iostream>
