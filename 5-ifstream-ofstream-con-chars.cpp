@@ -43,8 +43,7 @@ void crearFichero() {
 
         // Cierre del flujo «f»: disociación del flujo con el fichero externo.
         f.close();
-    }
-    else {
+    } else {
         // El flujo «f» no se ha asociado correctamente con el fichero externo
         cerr << "No se ha podido crear el fichero \"mi-primer-fichero.txt\"" << endl;
     }
@@ -91,13 +90,11 @@ void copiar(const string nombreFichero, const string nombreCopia) {
                 copia.put(c);
             }
             copia.close();             // Disocia el flujo y el fichero externo
-        }
-        else {
+        } else {
             cerr << "No se ha podido escribir en \"" << nombreCopia << "\"." << endl;
         }
         original.close();              // Disocia el flujo y el fichero externo
-    }
-    else {
+    } else {
         cerr << "No se ha podido acceder a \"" << nombreFichero << "\"." << endl;
     }
 }
