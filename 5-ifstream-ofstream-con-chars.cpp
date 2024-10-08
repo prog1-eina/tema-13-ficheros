@@ -19,6 +19,7 @@
 #include <string>
 using namespace std;
 
+
 /*
  * Pre:  ---
  * Post: Crea un fichero denominado "mi-primer-fichero.txt" y escribe en él las letras
@@ -49,6 +50,7 @@ void crearFichero() {
     }
 }
 
+
 /*
  * Pre:  ---
  * Post: Si «nombreFichero» define el nombre de un fichero, entonces muestra su contenido en la
@@ -69,6 +71,7 @@ void mostrar(const string nombreFichero) {
         cerr << "No se ha podido acceder a \"" << nombreFichero << "\"" << endl;
     }
 }
+
 
 /*
  * Pre:  ---
