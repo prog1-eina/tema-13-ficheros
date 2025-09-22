@@ -1,10 +1,12 @@
-﻿/*********************************************************************************************\
+﻿/******************************************************************************
  * Curso de Programación 1. Tema 13 (Ficheros)
  * Autores: Javier Martínez y Miguel Ángel Latre
  * Última revisión: 3 de diciembre de 2019
  * Resumen: Algunas funciones que trabajan con ficheros leyendo o escribiendo
  *          datos de tipo entero a través del operador de extracción >>.
- * Nota: El programa completo está contenido en este fichero, por lo que puede compilarse y
+ * Nota: El programa completo está contenido en este fichero, por lo que puede
+ *       compilarse y ejecutarse con la extensión Code Runner de
+ *       Visual Studio Code.
  *       ejecutarse con la extensión Code Runner de Visual Studio Code.
  *       También puede compilarse desde la terminal través de la orden
  *           g++ -Wall -Wextra 4-ifstream-ofstream-con-ints.cpp -o 4-ifstream-ofstream-con-ints
@@ -12,7 +14,7 @@
  *           .\4-ifstream-ofstream-con-ints.exe
  *       o en Linux y macOS
  *           ./4-ifstream-ofstream-con-ints
-\*********************************************************************************************/
+ *****************************************************************************/
 
 #include <iostream>
 #include <fstream>
@@ -21,9 +23,9 @@ using namespace std;
 
 /*
  * Pre:  ---
- * Post: Crea un fichero denominado "mi-primer-fichero.txt" y escribe en él los números del 1
- *       al 100, a razón de uno por línea. En caso de que se produzca un error, informa de ello
- *       escribiendo en «cerr».
+ * Post: Crea un fichero denominado "mi-primer-fichero.txt" y escribe en él los
+ *       números del 1 al 100, uno por línea. Si ocurre un error, informa de
+ *       ello escribiendo en «cerr».
  */
 void crearFichero() {
     // Declaración de un flujo de datos de salida
@@ -45,16 +47,18 @@ void crearFichero() {
         f.close();
     } else {
         // El flujo «f» no se ha asociado correctamente con el fichero externo
-        cerr << "No se ha podido crear el fichero \"mi-primer-fichero.txt\"" << endl;
+        cerr << "No se ha podido crear el fichero \"mi-primer-fichero.txt\""
+             << endl;
     }
 }
 
 /*
- * Pre:  «nombreFichero» es un fichero que contiene una secuencia de números enteros, a razón
- *       de uno por línea
- * Post: Si «nombreFichero» define el nombre de un fichero, entonces muestra su contenido en la
- *       pantalla, escribiendo cada entero del fichero separándolos entre sí con un espacio en
- *       blanco; en caso contrario advierte del error escribiendo un mensaje en la pantalla.
+ * Pre:  «nombreFichero» es un fichero que contiene una secuencia de números
+ *       enteros, a razón de uno por línea.
+ * Post: Si «nombreFichero» define el nombre de un fichero, muestra su
+ *       contenido en la pantalla, escribiendo cada entero del fichero separado
+ *       por un espacio en blanco; en caso contrario advierte del error
+ *       escribiendo un mensaje en la pantalla.
  */
 void mostrar(const string nombreFichero) {
     ifstream f;                    // Declara un flujo de entrada
@@ -69,17 +73,18 @@ void mostrar(const string nombreFichero) {
         }
         f.close();                 // Disocia el flujo y el fichero externo
     } else {
-        cerr << "No se ha podido acceder a \"" << nombreFichero << "\"" << endl;
+        cerr << "No se ha podido acceder a \""
+             << nombreFichero << "\"" << endl;
     }
 }
 
 
 /*
- * Pre:  «nombreFichero» es un fichero que contiene una secuencia de números enteros, a razón
- *       de uno por línea.
- * Post: Si «nombreFichero» define el nombre de un fichero, copia su contenido en
- *       «nombreCopia»; en caso contrario o en caso de otro error, advierte del mismo
- *       escribiendo un mensaje en la pantalla.
+ * Pre:  «nombreFichero» es un fichero que contiene una secuencia de números
+ *       enteros, a razón de uno por línea.
+ * Post: Si «nombreFichero» define el nombre de un fichero, copia su contenido
+ *       en «nombreCopia»; en caso contrario o en caso de otro error, advierte
+ *       del mismo escribiendo un mensaje en la pantalla.
  */
 void copiar(const string nombreFichero, const string nombreCopia) {
     ifstream original;               // Declara un flujo de entrada
@@ -90,7 +95,7 @@ void copiar(const string nombreFichero, const string nombreCopia) {
         if (copia.is_open()) {
             int n;            
             while (original >> n) {
-            // Mientras se leen los datos del flujo y la última lectura es correcta
+            // Mientras se leen datos del flujo y la última lectura es correcta
                 // Se procesa el último dato leído: 
                 // Escribe en copia el último entero leído
                 copia << n << endl;      
@@ -102,12 +107,14 @@ void copiar(const string nombreFichero, const string nombreCopia) {
         }
         original.close();// Disocia y libera ficheros
     } else {
-        cerr << "No se ha podido acceder a \"" << nombreFichero << "\"." << endl;
+        cerr << "No se ha podido acceder a \""
+             << nombreFichero << "\"." << endl;
     }
 }
 
 /*
- * Programa que hace una pequeña prueba de las funciones «crearFichero», «mostrar» y «copiar».
+ * Programa que hace una pequeña prueba de las funciones «crearFichero»,
+ * «mostrar» y «copiar».
  */
 int main() {
     crearFichero();
