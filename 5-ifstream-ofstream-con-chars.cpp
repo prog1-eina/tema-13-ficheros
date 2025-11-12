@@ -70,6 +70,7 @@ void mostrar(const string nombreFichero) {
             cout << c;
         }
         f.close();                 // Disocia el flujo y el fichero externo
+        cout << endl;
     } else {
         cerr << "No se ha podido acceder a \""
              << nombreFichero << "\"" << endl;
