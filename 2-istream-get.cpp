@@ -31,7 +31,7 @@ int main() {
 	
     do{
 		cin.get(c);
-		cout << "Carácter leído: " << c << endl;
+		cout << "Carácter leído: '" << c << "'" << endl;
 		numVeces++;
 	} while (c != FIN);
 
