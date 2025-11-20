@@ -29,7 +29,7 @@ int main() {
     char c;
 	cout << "No voy a parar hasta que introduzcas el carácter '" << FIN << "': ";
 	
-    do{
+    do {
 		cin.get(c);
 		cout << "Carácter leído: '" << c << "'" << endl;
 		numVeces++;
