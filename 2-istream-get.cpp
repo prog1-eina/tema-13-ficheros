@@ -1,7 +1,6 @@
 /******************************************************************************
  * Curso de Programación 1. Tema 13 (Ficheros)
  * Autores: Ricardo J. Rodríguez
- * Última revisión: 25 de noviembre de 2022
  * Resumen: Ejemplo de uso del método get.
  * Nota: El programa completo está contenido en este fichero, por lo que puede
  *       compilarse y ejecutarse con la extensión Code Runner de

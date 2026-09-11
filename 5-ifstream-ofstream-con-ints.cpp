@@ -1,7 +1,6 @@
 ﻿/******************************************************************************
  * Curso de Programación 1. Tema 13 (Ficheros)
  * Autores: Javier Martínez y Miguel Ángel Latre
- * Última revisión: 3 de diciembre de 2019
  * Resumen: Algunas funciones que trabajan con ficheros leyendo o escribiendo
  *          datos de tipo entero a través del operador de extracción >>.
  * Nota: El programa completo está contenido en este fichero, por lo que puede

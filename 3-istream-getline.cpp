@@ -1,7 +1,6 @@
 /******************************************************************************
  * Curso de Programación 1. Tema 13 (Ficheros)
  * Autores: Miguel Ángel Latre
- * Última revisión: 28 de noviembre de 2022
  * Resumen: Ejemplo de uso de las funciones getline, con y sin delimitador 
  *          explícito.
  * Nota: El programa completo está contenido en este fichero, por lo que puede
