@@ -25,12 +25,12 @@ int main() {
     char caracter = 'E';
 
     cout << "Escritura de caracteres con put: ";
-    cout.put('a');
+    cout.put('b');
     cout.put(caracter);
     cout << endl;
 
     cout << "Escritura de caracteres con <<: ";
-    cout << 'a';
+    cout << 'b';
     cout << caracter;
     cout << endl;
 
